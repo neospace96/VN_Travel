@@ -1,4 +1,7 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+
+var W = Dimensions.get('window').width;
+var H = Dimensions.get('window').height;
 
 export const colors = {
     black: '#1a1917',
@@ -17,21 +20,22 @@ export default StyleSheet.create({
     },
     scrollview: {
         flex: 1,
-        paddingTop: 50
+        paddingTop: 250
     },
     scrollviewContentContainer: {
-        paddingBottom: 50
+        paddingBottom: 0
     },
     exampleContainer: {
-        marginBottom: 30
+        flex :1,
+        marginBottom: 10
     },
     title: {
         paddingHorizontal: 30,
         backgroundColor: 'transparent',
         color: 'rgba(255, 255, 255, 0.9)',
         fontSize: 20,
-        fontWeight: 'bold',
-        textAlign: 'center'
+        textAlign: 'center',
+        fontFamily: 'Roboto'
     },
     subtitle: {
         marginTop: 5,
@@ -55,5 +59,38 @@ export default StyleSheet.create({
         height: 8,
         borderRadius: 4,
         marginHorizontal: 8
-    }
+    },
+    header_Left:{
+      width:W*0.3,
+      justifyContent:'center',
+      alignItems:'center',
+      marginTop : 25,
+      flexDirection:'row',
+      marginLeft : 0
+    },
+    imgMenu: {width: W * 0.08, height: W * 0.08},
+    header:{
+      height:H*0.1,
+    },
+    center:{
+      flex:1,
+      height:H*0.9,
+    },
+    card:{
+      flex:1,
+      backgroundColor: 'white',
+      margin: 10,
+      marginTop: 5,
+      marginBottom: 5,
+      borderWidth: 1,
+      borderColor: 'lightgrey',
+      borderRadius: 8,
+
+    },
+    productImage: {
+        width: W-40,
+        height: H/3,
+        margin:15,
+        alignSelf:'center',
+    },
 });

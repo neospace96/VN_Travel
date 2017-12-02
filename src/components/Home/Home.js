@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import { View, ScrollView, Text, StatusBar } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
-import { sliderWidth, itemWidth } from './styles/sestyle';
-import SliderEntry from './components/SliderEntry';
-import styles, { colors } from './styles/castyle';
-import { ENTRIES1 } from './components/entries';
-
+import { sliderWidth, itemWidth } from '../../styles/sestyle';
+import SliderEntry from '../SliderEntry';
+import styles, { colors } from '../../styles/castyle';
+import { ENTRIES1 } from '../entries';
 const SLIDER_1_FIRST_ITEM = 0;
 
-export default class AppA extends Component {
+export default class Home extends Component {
 
     constructor (props) {
         super(props);
@@ -19,15 +18,6 @@ export default class AppA extends Component {
         };
     }
 
-    _renderItem ({item, index}) {
-        return (
-            <SliderEntry
-              data={item}
-              even={(index + 1) % 2 === 0}
-            />
-        );
-    }
-
     _renderItemWithParallax ({item, index}, parallaxProps) {
         return (
             <SliderEntry
@@ -35,6 +25,7 @@ export default class AppA extends Component {
               even={(index + 1) % 2 === 0}
               parallax={true}
               parallaxProps={parallaxProps}
+              navigation={this.props.navigation}
             />
         );
     }
@@ -44,14 +35,12 @@ export default class AppA extends Component {
 
         return (
             <View style={styles.exampleContainer}>
-                <Text style={styles.title}>Example 1</Text>
-                <Text style={styles.subtitle}>
-                    Chào xìn
-                </Text>
+                <Text style={styles.title}> ────── Chọn điểm đến  ──────</Text>
+
                 <Carousel
                   ref={(c) => { if (!this.state.slider1Ref) { this.setState({ slider1Ref: c }); } }}
                   data={ENTRIES1}
-                  renderItem={this._renderItemWithParallax}
+                  renderItem={this._renderItemWithParallax.bind(this)}
                   sliderWidth={sliderWidth}
                   itemWidth={itemWidth}
                   hasParallaxImages={true}
@@ -83,7 +72,6 @@ export default class AppA extends Component {
             </View>
         );
     }
-
 
     get gradient () {
         return (

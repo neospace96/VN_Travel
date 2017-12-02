@@ -68,7 +68,8 @@ export default StyleSheet.create({
         color: colors.black,
         fontSize: 13,
         fontWeight: 'bold',
-        letterSpacing: 0.5
+        letterSpacing: 0.5,
+        fontFamily: 'Roboto'
     },
     titleEven: {
         color: 'white'

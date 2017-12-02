@@ -33,9 +33,8 @@ export default class SliderEntry extends Component {
             />
         );
     }
-
     render () {
-        const { data: { title, subtitle }, even } = this.props;
+        const { data: { title, subtitle }, even, navigation } = this.props;
 
         const uppercaseTitle = title ? (
             <Text
@@ -50,7 +49,7 @@ export default class SliderEntry extends Component {
             <TouchableOpacity
               activeOpacity={1}
               style={styles.slideInnerContainer}
-              onPress={() => { alert(`You've clicked '${title}'`); }}
+              onPress={() => navigation.navigate('_Tour',{id_city : `${subtitle}`, name : `${title}` })}
               >
                 <View style={[styles.imageContainer, even ? styles.imageContainerEven : {}]}>
                     { this.image }
@@ -62,7 +61,7 @@ export default class SliderEntry extends Component {
                       style={[styles.subtitle, even ? styles.subtitleEven : {}]}
                       numberOfLines={2}
                     >
-                        { subtitle }
+
                     </Text>
                 </View>
             </TouchableOpacity>

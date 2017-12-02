@@ -12,13 +12,12 @@ import {
   View
 } from 'react-native';
 
-import AppA from './src/App'
+import Root from './src/Root';
 
-
-export default class App extends Component<{}> {
+export default class App extends Component{
   render() {
     return (
-      <AppA />
+      <Root />
     );
   }
 }
