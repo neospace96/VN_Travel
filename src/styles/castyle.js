@@ -61,8 +61,7 @@ export default StyleSheet.create({
         marginHorizontal: 8
     },
     header_Left:{
-      width:W*0.3,
-      justifyContent:'center',
+      width:W,
       alignItems:'center',
       marginTop : 25,
       flexDirection:'row',
@@ -78,6 +77,7 @@ export default StyleSheet.create({
     },
     card:{
       flex:1,
+      overflow: 'hidden',
       backgroundColor: 'white',
       margin: 10,
       marginTop: 5,
@@ -87,10 +87,14 @@ export default StyleSheet.create({
       borderRadius: 8,
 
     },
-    productImage: {
-        width: W-40,
-        height: H/3,
-        margin:15,
-        alignSelf:'center',
+    tourImage: {
+        flex :1,
+        width: W,
+        height: H/3
+    },
+    actionButtonIcon: {
+      fontSize: 20,
+      height: 22,
+      color: 'white',
     },
 });

@@ -49,7 +49,7 @@ export default class SliderEntry extends Component {
             <TouchableOpacity
               activeOpacity={1}
               style={styles.slideInnerContainer}
-              onPress={() => navigation.navigate('_Tour',{id_city : `${subtitle}`, name : `${title}` })}
+              onPress={() => navigation.navigate('_Hotel',{id_city : `${subtitle}`, name : `${title}` })}
               >
                 <View style={[styles.imageContainer, even ? styles.imageContainerEven : {}]}>
                     { this.image }
