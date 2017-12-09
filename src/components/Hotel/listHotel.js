@@ -8,7 +8,7 @@ import styles, { colors } from '../../styles/castyle';
 import getListHotel from '../../api/getListHotel';
 import ActionButton from 'react-native-action-button';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-
+import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons'
 var W = Dimensions.get('window').width;
 var H = Dimensions.get('window').height;
 const url = "http://192.168.56.1:8080/DACN/images/img_hotel/";
@@ -53,23 +53,23 @@ export default class Hotel extends Component{
     return(
       <View style={styles.container}>
           <StatusBar
-            translucent={true}
+            translucent={false}
             backgroundColor={'rgba(0, 0, 0, 0.3)'}
             barStyle={'light-content'}
           />
           { this.gradient }
-          <View style={styles.header} >
-            <TouchableOpacity style={styles.header_Left}
-                onPress={()=>{this.props.navigation.goBack()}}
-             >
-                <Image
-                        style = {styles.imgMenu}
-                        source={require('../../media/back.png')}
-                />
-                <Text style={{color:'black',fontSize:H *0.03, fontFamily:'Roboto'}} >{this.props.navigation.state.params.name}</Text>
-            </TouchableOpacity>
-        </View>
+
         <View style={styles.center}>
+          <View style={styles.header}>
+            <TouchableOpacity style={styles.HLeft}
+              onPress={()=>{
+                this.props.navigation.navigate('DrawerOpen');
+              }}
+            >
+              <SimpleLineIcons name="menu" style={{fontSize: 30,height: 30,color:'white'}}/>
+            </TouchableOpacity>
+            <Text style={styles.title}>{this.props.navigation.state.params.name}</Text>
+          </View>
           <ListView
             removeClippedSubviews={false}
             dataSource={this.state.listHotels}

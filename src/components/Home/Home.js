@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { View, ScrollView, Text, StatusBar } from 'react-native';
+import { View, ScrollView, Text, StatusBar,TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 import { sliderWidth, itemWidth } from '../../styles/sestyle';
 import SliderEntry from '../SliderEntry';
 import styles, { colors } from '../../styles/castyle';
 import { ENTRIES1 } from '../entries';
+import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons'
 const SLIDER_1_FIRST_ITEM = 0;
 
 export default class Home extends Component {
@@ -34,6 +35,7 @@ export default class Home extends Component {
         const { slider1ActiveSlide, slider1Ref } = this.state;
 
         return (
+          <View style={{flex:1}}>
             <View style={styles.exampleContainer}>
                 <Text style={styles.title}> ────── Chọn điểm đến  ──────</Text>
 
@@ -70,6 +72,7 @@ export default class Home extends Component {
                   tappableDots={!!slider1Ref}
                 />
             </View>
+            </View>
         );
     }
 
@@ -93,6 +96,15 @@ export default class Home extends Component {
                   barStyle={'light-content'}
                 />
                 { this.gradient }
+                <View style={styles.header}>
+                  <TouchableOpacity style={styles.HLeft}
+                    onPress={()=>{
+                      this.props.navigation.navigate('DrawerOpen');
+                    }}
+                  >
+                    <SimpleLineIcons name="menu" style={{fontSize: 30,height: 30,color:'white'}}/>
+                  </TouchableOpacity>
+                </View>
                 <ScrollView
                   style={styles.scrollview}
                   contentContainerStyle={styles.scrollviewContentContainer}

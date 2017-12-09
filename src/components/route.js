@@ -1,11 +1,14 @@
-import { StackNavigator } from 'react-navigation';
+import { StackNavigator, DrawerNavigator } from 'react-navigation';
 import React from 'react';
+import { Dimensions } from 'react-native';
+var W = Dimensions.get('window').width;
+var H = Dimensions.get('window').height;
 import Home from './Home/Home';
 import Tour from './Tour/listTour';
 import tourDetail from './Tour/tourDetail';
 import Hotel from './Hotel/listHotel';
 import hotelDetail from './Hotel/hotelDetail';
-
+import Menu from './Menu/Menu';
 export const HomeStack = StackNavigator({
   _Home:{
     screen: Home,
@@ -37,4 +40,14 @@ export const HomeStack = StackNavigator({
       header:null
     }
   },
+})
+export const SlideMenu = DrawerNavigator({
+    _Slide: {
+        screen: HomeStack
+    }
+},{
+    drawerWidth: W*0.7,
+    drawerPosition: 'left',
+    contentComponent: props => <Menu {...props} />,
+    drawerBackgroundColor: 'transparent'
 })

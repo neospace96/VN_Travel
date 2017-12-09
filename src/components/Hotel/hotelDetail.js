@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import {
-  Text, View,TouchableOpacity,Dimensions,Image,StatusBar,ScrollView
+  Text, View,TouchableOpacity,Dimensions,Image,StatusBar,ScrollView,ImageBackground
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import styles, { colors } from '../../styles/castyle';
 import { ContentSnippet } from '../helper';
 import Swiper from 'react-native-swiper';
 import HeaderImageScrollView,{TriggeringView} from 'react-native-image-header-scroll-view';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 var W = Dimensions.get('window').width;
 var H = Dimensions.get('window').height;
 const sw = W;
@@ -36,11 +37,9 @@ export default class hotelDetail extends Component{
           />
           { this.gradient }
 
-          <HeaderImageScrollView
-            maxHeight={sh}
-            minHeight={70}
-            renderHeader={() => (
-                <ScrollView style={{height: sh-10, width: sw }}
+              <ScrollView >
+                <View style={{height: sh,flexDirection:'row',justifyContent: 'space-between'}}>
+                <ScrollView style={{height: sh, width: sw,position:'absolute' }}
                   horizontal
                   removeClippedSubviews={false}
                   showsHorizontalScrollIndicator={false}
@@ -56,9 +55,14 @@ export default class hotelDetail extends Component{
                   }
                   )}
                 </ScrollView>
-            )}
-          >
-        </HeaderImageScrollView>
+                <TouchableOpacity onPress={()=>{this.props.navigation.goBack()}}>
+                  <Image source={require('../../media/back.png')} style={{width:30,height:30,marginTop:15,marginLeft:15,marginRight:15}} />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={()=>{}}>
+                  <Image source={require('../../media/heart.png')} style={{width:30,height:30,marginTop:15,marginLeft:15,marginRight:15}} />
+                </TouchableOpacity>
+              </View>
+              </ScrollView>
       </View>
     )
   }

@@ -20,7 +20,7 @@ export default StyleSheet.create({
     },
     scrollview: {
         flex: 1,
-        paddingTop: 250
+        paddingTop: 200
     },
     scrollviewContentContainer: {
         paddingBottom: 0
@@ -68,9 +68,6 @@ export default StyleSheet.create({
       marginLeft : 0
     },
     imgMenu: {width: W * 0.08, height: W * 0.08},
-    header:{
-      height:H*0.1,
-    },
     center:{
       flex:1,
       height:H*0.9,
@@ -96,5 +93,18 @@ export default StyleSheet.create({
       fontSize: 20,
       height: 22,
       color: 'white',
+      position: 'absolute'
     },
+    wrapper: {flex:1,backgroundColor:'white'},
+      header:{marginLeft:15,marginTop:50, flexDirection:'row'},
+      containerr:{height: H*0.9},
+        borderStyle:{height: H*0.05},
+        itemsMenu:{height: H*0.06,backgroundColor:'#bdc3c7',justifyContent:'center'},
+        itemsMenu2:{height: H*0.06,backgroundColor:'#7f8c8d',justifyContent:'center'},
+          itemsCenter:{height: H*0.05,flexDirection:'row'},
+            iconMenu:{width: W*0.1,borderRightWidth:0.5,borderColor:'black',justifyContent:'center',alignItems:'center'},
+              icon:{width: W*0.05, height: W*0.05},
+            txtMenu:{width:W*0.9,justifyContent:'center'},
+              btnFB: {width: W*0.4, height:H*0.05, backgroundColor:'black', marginLeft: W*0.07},
+              HLeft: {width: W * 0.1, height: H*0.1},
 });
