@@ -50,7 +50,7 @@ export default class Tour extends Component{
   }
 
   render(){
-    const idCity = this.props.navigation.state.params.id_city;
+    const {idCity} = this.props.navigation.state.params.id_city;
     return(
       <View style={styles.container}>
           <StatusBar
@@ -76,7 +76,7 @@ export default class Tour extends Component{
             dataSource={this.state.listTours}
             renderRow={tour => (
               <TouchableOpacity style={styles.card}
-                onPress = { () => {this.props.navigation.navigate('_tourDetail', tour)} }
+                onPress = { () => {this.props.navigation.navigate('_tourDetail', {tour})} }
               >
                 <Image style={styles.tourImage} source={{ uri: `${url}${tour.images[0]}` }} />
                 <View style={{margin:20}}>
@@ -87,7 +87,7 @@ export default class Tour extends Component{
           />
         </View>
         <ActionButton buttonColor="rgba(231,76,60,1)">
-          <ActionButton.Item buttonColor='#9b59b6' title="Hotel" textStyle={{fontSize: 15,fontFamily:'Roboto'}} onPress={() => {this.props.navigation.navigate('_Hotel', {id_city : idCity})}}>
+          <ActionButton.Item buttonColor='#9b59b6' title="Hotel" textStyle={{fontSize: 15,fontFamily:'Roboto'}} onPress={() => {this.props.navigation.navigate('_Hotel', {id_city : idCity,name:this.props.navigation.state.params.name })}}>
             <FontAwesome name="home" style={styles.actionButtonIcon} />
           </ActionButton.Item>
           <ActionButton.Item buttonColor='#3498db' title="Tour" textStyle={{fontSize: 15, fontFamily:'Roboto'}} onPress={() => {}}>

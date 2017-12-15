@@ -8,8 +8,13 @@ import Tour from './Tour/listTour';
 import tourDetail from './Tour/tourDetail';
 import Hotel from './Hotel/listHotel';
 import hotelDetail from './Hotel/hotelDetail';
+import SignIn from './User/SignIn'
+import SignUp from './User/SignUp'
 import Menu from './Menu/Menu';
-export const HomeStack = StackNavigator({
+import wlView from './WishList/wlView'
+import UserDetail from './User/UserDetail'
+
+const AppStack = StackNavigator({
   _Home:{
     screen: Home,
     navigationOptions:{
@@ -40,14 +45,57 @@ export const HomeStack = StackNavigator({
       header:null
     }
   },
+  _SignIn:{
+    screen: SignIn,
+    navigationOptions:{
+      header:null
+    }
+  },
+  _SignUp:{
+    screen: SignUp,
+    navigationOptions:{
+      header:null
+    }
+  },
+  _Profile:{
+    screen: UserDetail,
+    navigationOptions:{
+      header:null
+    }
+  },
+  _Cart:{
+    screen:wlView,
+    navigationOptions:{
+      header:null
+    }
+  }
 })
 export const SlideMenu = DrawerNavigator({
-    _Slide: {
-        screen: HomeStack
+  Home:{
+    screen: AppStack,
+    navigationOptions:{
+      header:null
     }
+  }
 },{
     drawerWidth: W*0.7,
     drawerPosition: 'left',
-    contentComponent: props => <Menu {...props} />,
+    contentComponent: (props) => {
+      return <Menu {...props}/>
+    },
     drawerBackgroundColor: 'transparent'
+})
+export const HomeStack = StackNavigator({
+  _SignIn:{
+    screen: SignIn,
+    navigationOptions:{
+      header:null
+    }
+  },
+  HomeScreen: {
+    screen: SlideMenu,
+    navigationOptions:{
+      header:null
+    }
+  },
 })

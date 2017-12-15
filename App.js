@@ -5,19 +5,12 @@
  */
 
 import React, { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
-
-import Root from './src/Root';
-
+import { HomeStack } from './src/components/route'
+import global from './src/global'
 export default class App extends Component{
   render() {
     return (
-      <Root />
+      <HomeStack />
     );
   }
 }

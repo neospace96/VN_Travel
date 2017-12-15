@@ -8,7 +8,6 @@ import styles, { colors } from '../../styles/castyle';
 import { ENTRIES1 } from '../entries';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons'
 const SLIDER_1_FIRST_ITEM = 0;
-
 export default class Home extends Component {
 
     constructor (props) {
@@ -99,7 +98,7 @@ export default class Home extends Component {
                 <View style={styles.header}>
                   <TouchableOpacity style={styles.HLeft}
                     onPress={()=>{
-                      this.props.navigation.navigate('DrawerOpen');
+                      this.props.navigation.navigate('DrawerOpen')
                     }}
                   >
                     <SimpleLineIcons name="menu" style={{fontSize: 30,height: 30,color:'white'}}/>
