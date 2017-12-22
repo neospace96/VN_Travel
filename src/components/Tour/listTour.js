@@ -50,7 +50,7 @@ export default class Tour extends Component{
   }
 
   render(){
-    const {idCity} = this.props.navigation.state.params.id_city;
+    const idCity = this.props.navigation.state.params.id_city;
     return(
       <View style={styles.container}>
           <StatusBar

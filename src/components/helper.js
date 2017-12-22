@@ -1,3 +1,3 @@
-export function ContentSnippet(content){
-     return content.split(/\s+/).slice(0, 7).join(" ")+"...";
+export function getIcon(icon){
+     return icons[icon];
 }

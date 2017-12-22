@@ -26,18 +26,21 @@ export default class tourDetail extends Component{
     this.state = {
       color :'white',
       isActive:false,
+      token:''
     };
   }
 
-  gotoDetail(tour) {
-      const { navigate } = this.props.navigation;
-      navigate('_tourDetail', {tour} );
+  componentDidMount(){
+    getToken()
+    .then(token => this.setState({token:token}) )
+
   }
 
   addThisTourToCart=()=> {
           const {tour} = this.props.navigation.state.params;
           this.setState({isActive : !this.state.isActive})
-          const token =  getToken();
+          const token =  this.state.token;
+          console.log(token);
           const kq =  sendOrder(token, tour);
           if (kq === 'THEM_THANH_CONG') {
               console.log('THEM THANH CONG');
@@ -125,7 +128,7 @@ export default class tourDetail extends Component{
               <TouchableOpacity onPress={()=>{this.props.navigation.goBack()}}>
                 <FontAwesome name='chevron-left' style={{width:30,height:30,marginTop:15,marginLeft:15,marginRight:15,fontSize: 25,height: 25,color :'white'}} />
               </TouchableOpacity>
-              <TouchableOpacity onPress={this.addThisTourToCart}>
+              <TouchableOpacity onPress={this.addThisTourToCart.bind(this)}>
                 <FontAwesome name='heart' style={st} />
               </TouchableOpacity>
             </View>

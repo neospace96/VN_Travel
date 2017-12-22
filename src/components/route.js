@@ -13,8 +13,17 @@ import SignUp from './User/SignUp'
 import Menu from './Menu/Menu';
 import wlView from './WishList/wlView'
 import UserDetail from './User/UserDetail'
+import Weather from './extensions/weather'
 
 const AppStack = StackNavigator({
+
+  _Weather:{
+    screen: Weather,
+    navigationOptions:{
+      header:null
+    }
+  },
+
   _Home:{
     screen: Home,
     navigationOptions:{
@@ -86,6 +95,12 @@ export const SlideMenu = DrawerNavigator({
     drawerBackgroundColor: 'transparent'
 })
 export const HomeStack = StackNavigator({
+  _Weather:{
+    screen: Weather,
+    navigationOptions:{
+      header:null
+    }
+  },
   _SignIn:{
     screen: SignIn,
     navigationOptions:{
