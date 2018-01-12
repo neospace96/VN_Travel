@@ -230,7 +230,7 @@ export default class SignIn extends Component {
                   locations={[0.2,0.5,1]}
                   style={styles.btn}
                 >
-                <Text style={{fontFamily:'Roboto',fontSize:20,color:'#FFF'}}>Đăng nhập</Text>
+                <Text style={{fontSize:20,color:'#FFF'}}>Đăng nhập</Text>
                 </LinearGradient>
               </TouchableOpacity>
             </View>

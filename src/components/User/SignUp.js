@@ -166,7 +166,7 @@ export default class SignUp extends Component {
           <View style={styles.fc} />
             <View style={styles.scac}>
               <View style={styles.cat} >
-                <Text style={{fontSize: 25,fontWeight: 'bold',color: '#000000',fontFamily:'Roboto'}} >
+                <Text style={{fontSize: 25,fontWeight: 'bold',color: '#000000', }} >
                   Đăng ký
                 </Text>
               </View>
@@ -227,7 +227,7 @@ export default class SignUp extends Component {
                   locations={[0.2,0.5,1]}
                   style={styles.btn}
                 >
-                <Text style={{fontFamily:'Roboto',fontSize:20,color:'#FFF'}}>Đăng ký</Text>
+                <Text style={{ fontSize:20,color:'#FFF'}}>Đăng ký</Text>
                 </LinearGradient>
               </TouchableOpacity>
               <View style={{flex: 1,flexDirection: 'row',alignItems: 'center',marginBottom:10}}>

@@ -79,17 +79,17 @@ export default class Hotel extends Component{
               >
                 <Image style={styles.tourImage} source={{ uri: `${url}${hotel.images[0]}` }} />
                 <View style={{margin:20}}>
-                  <Text style={{color:'black',fontSize:20, fontFamily:'Roboto',fontWeight:'bold'}}>{hotel.name_hotel}</Text>
+                  <Text style={{color:'black',fontSize:20,fontWeight:'bold'}}>{hotel.name_hotel}</Text>
                 </View>
               </TouchableOpacity>
             )}
           />
         </View>
         <ActionButton buttonColor="rgba(231,76,60,1)">
-          <ActionButton.Item buttonColor='#9b59b6' title="Hotel" textStyle={{fontSize: 15, fontFamily:'Roboto'}} onPress={() => console.log("notes tapped!")}>
+          <ActionButton.Item buttonColor='#9b59b6' title="Hotel" textStyle={{fontSize: 15}} onPress={() => console.log("notes tapped!")}>
             <FontAwesome name="home" style={styles.actionButtonIcon} />
           </ActionButton.Item>
-          <ActionButton.Item buttonColor='#3498db' title="Tour" textStyle={{fontSize: 15, fontFamily:'Roboto'}} onPress={() => {this.props.navigation.navigate('_Tour', {id_city : idCity,name: this.props.navigation.state.params.name})}}>
+          <ActionButton.Item buttonColor='#3498db' title="Tour" textStyle={{fontSize: 15}} onPress={() => {this.props.navigation.navigate('_Tour', {id_city : idCity,name: this.props.navigation.state.params.name})}}>
             <FontAwesome name="globe" style={styles.actionButtonIcon} />
           </ActionButton.Item>
         </ActionButton>

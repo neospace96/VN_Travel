@@ -28,6 +28,10 @@ export default class Menu extends Component {
     this.props.navigation.navigate('_Cart');
   }
 
+  gotoSer = () => {
+    this.props.navigation.navigate('_Map');
+  }
+
   render() {
     return (
       <View style={styles.wrapper}>
@@ -38,7 +42,7 @@ export default class Menu extends Component {
                 style = {{width:100, height:100, borderRadius:100}}
               />
             </View>
-            <Text style={{fontFamily:'Roboto',fontSize:25}}>{this.state.user.name}</Text>
+            <Text style={{fontSize:25}}>{this.state.user.name}</Text>
           </View>
           <View style={{flex:1,backgroundColor:'whitesmoke'}}>
             <TouchableOpacity
@@ -49,7 +53,7 @@ export default class Menu extends Component {
                 <FontAwesome name="user-o" size={25} color="black"/>
               </View>
               <View style ={{marginLeft:15}}>
-                <Text style = {{fontSize:20,fontFamily:'Roboto'}}>Tài khoản</Text>
+                <Text style = {{fontSize:20}}>Tài khoản</Text>
               </View>
             </TouchableOpacity>
             <TouchableOpacity
@@ -60,7 +64,7 @@ export default class Menu extends Component {
                 <FontAwesome name="heart-o" size={25} color="black"/>
               </View>
               <View style ={{marginLeft:15}}>
-                <Text style = {{fontSize:20,fontFamily:'Roboto'}}>Yêu thích</Text>
+                <Text style = {{fontSize:20}}>Yêu thích</Text>
               </View>
             </TouchableOpacity>
             <TouchableOpacity style = {{alignItems:'center',height:48, backgroundColor:'white',flexDirection:'row',marginBottom:5}}>
@@ -68,15 +72,18 @@ export default class Menu extends Component {
                 <Feather name="settings" size={25} color="black"/>
               </View>
               <View style ={{marginLeft:15}}>
-                <Text style = {{fontSize:20,fontFamily:'Roboto'}}>Cài đặt</Text>
+                <Text style = {{fontSize:20}}>Cài đặt</Text>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity style = {{alignItems:'center',height:48, backgroundColor:'white',flexDirection:'row',marginBottom:5}}>
+            <TouchableOpacity
+              style = {{alignItems:'center',height:48, backgroundColor:'white',flexDirection:'row',marginBottom:5}}
+              onPress = {this.gotoSer}
+            >
               <View style ={{marginLeft:15}}>
                 <Feather name="help-circle" size={25} color="black"/>
               </View>
               <View style ={{marginLeft:15}}>
-                <Text style = {{fontSize:20,fontFamily:'Roboto'}}>Trợ giúp</Text>
+                <Text style = {{fontSize:20}}>Trợ giúp</Text>
               </View>
             </TouchableOpacity>
           </View>

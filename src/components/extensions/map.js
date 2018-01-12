@@ -5,7 +5,7 @@ var W = Dimensions.get('window').width;
 var H = Dimensions.get('window').height;
 
 const mode = 'driving'; //'walking';
-const APIKEY = 'AIzaSyDCfvhVZ4NtOZYVWhSMPGQUv9cZ0_Vfl6E';
+const APIKEY = 'AIzaSyBZCDJchLkCxcHupJWZ7YDCWErOlhHfEK8';
 //const url = 'https://maps.googleapis.com/maps/api/directions/json?origin='+this.state.origin+'&destination='+destination+'&key='+APIKEY+'&mode='+mode;
 //const url = 'https://maps.googleapis.com/maps/api/directions/json?origin=Hồ Chí Minh&destination=Tan+An,+Long+An,+Viet+Nam&key=AIzaSyD9Qs7IPmEYsxCH3mG54GIJj_GUSuyJv-g'
 
@@ -33,7 +33,7 @@ export default class Restaurant extends Component{
                }
            },
            origin : '',
-           destination : '10.408588147232294 , 107.13517494499682',
+           destination : '10.839044 ,106.751585',
            makerPosition:{
                latitude:0,
                longitude:0,
@@ -52,7 +52,7 @@ export default class Restaurant extends Component{
         t= this;
     }
 _getService(){
-        url='https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='+this.state.initalRegion.latitude+','+this.state.initalRegion.longitude+'&radius=1000&type='+this.state.keyword+'&keyword='+this.state.keyword+'&key='+APIKEY
+        url='https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=10.8105831,106.7091422&radius=1000&type='+this.state.keyword+'&keyword='+this.state.keyword+'&key='+APIKEY
         fetch(url)
         .then(response => response.json())
         .then(responseJson => {
@@ -105,8 +105,8 @@ _selectedMarker(e){
         filter:
                         <View style={styles.footer}>
                         <Image
-                        source={require('../images/location.png')}
-                        />
+                        source={require('../../media/eye.png')}
+/>
                         <Text style={{fontSize:W*0.028}} >{e}</Text>
                     </View>
     })
@@ -175,7 +175,7 @@ componentDidMount(){
                 <TouchableOpacity onPress={()=>{this.props.navigation.goBack()}} style={styles.DLeft}>
                         <Image
                         style = {styles.imgMenu}
-                        source={require('../images/back.png')}/>
+                        source={require('../../media/back.png')}/>
                 </TouchableOpacity>
                 <View style={styles.DistanceCenter}>
                         <Picker

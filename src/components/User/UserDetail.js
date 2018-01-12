@@ -26,16 +26,16 @@ export default class UserDetail extends Component{
           />
         </View>
         <View style={{alignItems:'center',marginTop:20, marginBottom:50}}>
-          <Text style={{fontSize:35,color:'rgb(119, 9, 125)',fontFamily:'Roboto'}}>{this.props.navigation.state.params.user.name}</Text>
+          <Text style={{fontSize:35,color:'rgb(119, 9, 125)', }}>{this.props.navigation.state.params.user.name}</Text>
         </View>
         <View style={{flex:1,flexDirection:'row',justifyContent:'center'}}>
           <View style={{marginLeft:5}}>
-            <Text style={{fontSize:24,fontFamily:'Roboto',marginBottom:50,color:'black'}}>Địa chỉ:</Text>
-            <Text style={{fontSize:24,fontFamily:'Roboto',marginBottom:50,color:'black'}}>Điện thoại:</Text>
+            <Text style={{fontSize:24 ,marginBottom:50,color:'black'}}>Địa chỉ:</Text>
+            <Text style={{fontSize:24 ,marginBottom:50,color:'black'}}>Điện thoại:</Text>
           </View>
           <View style={{marginLeft:5}}>
-            <Text style={{fontSize:24,fontFamily:'Roboto',marginBottom:50}}> {this.props.navigation.state.params.user.address}</Text>
-            <Text style={{fontSize:24,fontFamily:'Roboto',marginBottom:50}}> {this.props.navigation.state.params.user.phone}</Text>
+            <Text style={{fontSize:24 ,marginBottom:50}}> {this.props.navigation.state.params.user.address}</Text>
+            <Text style={{fontSize:24 ,marginBottom:50}}> {this.props.navigation.state.params.user.phone}</Text>
           </View>
         </View>
       </View>

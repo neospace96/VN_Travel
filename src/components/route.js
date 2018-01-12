@@ -14,18 +14,24 @@ import Menu from './Menu/Menu';
 import wlView from './WishList/wlView'
 import UserDetail from './User/UserDetail'
 import Weather from './extensions/weather'
+import Restaurant from './extensions/map'
 
 const AppStack = StackNavigator({
 
-  _Weather:{
-    screen: Weather,
+  _Home:{
+    screen: Home,
     navigationOptions:{
       header:null
     }
   },
-
-  _Home:{
-    screen: Home,
+  _Map:{
+    screen: Restaurant,
+    navigationOptions:{
+      header:null
+    }
+  },
+  _Weather:{
+    screen: Weather,
     navigationOptions:{
       header:null
     }
@@ -92,21 +98,24 @@ export const SlideMenu = DrawerNavigator({
     contentComponent: (props) => {
       return <Menu {...props}/>
     },
+    drawerOpenRoute: 'DrawerOpen',
+    drawerCloseRoute: 'DrawerClose',
+    drawerToggleRoute: 'DrawerToggle',
     drawerBackgroundColor: 'transparent'
 })
 export const HomeStack = StackNavigator({
-  _Weather:{
+  /*_Weather:{
     screen: Weather,
     navigationOptions:{
       header:null
     }
-  },
-  _SignIn:{
+  },*/
+  /*_SignIn:{
     screen: SignIn,
     navigationOptions:{
       header:null
     }
-  },
+  },*/
   HomeScreen: {
     screen: SlideMenu,
     navigationOptions:{
